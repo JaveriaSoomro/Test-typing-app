@@ -20,7 +20,10 @@ function gettingRandomNumber(){
   jumble =   [word[i] , word[j]] = [word[j] , word[i]];  
 }
 randomWord.innerHTML = " ";
-  randomWord.innerHTML = `<span>${word.join("")}</span>`;                
+  randomWord.innerHTML = `<span>${word.join("")}</span>`; 
+  if(randomWord.innerHTML == wordList[random].value) {
+    gettingRandomNumber();
+  }              
 }
 
 // Hint
@@ -49,7 +52,7 @@ function checkInput(){
                                  <button class="buttons" onclick="playAgain()">Play Again!!</button>`;
     }
     else{
-        inputLowerCase === wordLowerCase ? correct() : incorrect();
+        inputLowerCase === wordLowerCase ? correct() : incorrect() ;
     }
 }
 function correct(){
@@ -81,8 +84,15 @@ function timer(){
     timeCount--;
     if(timeCount < 0 ){
         time.innerHTML = "";
-        time.innerHTML +=  `<p>Time's Up!</p><span> 00 Seconds</span>`;
+        time.innerHTML +=  `<p>Time Left :</p><span> 00 Seconds</span>`;
         UserInput.style.pointerEvents = "none";
+        container.style.display = "none";
+        container2.style.display = "flex";
+        container2.innerHTML = "";
+        container2.innerHTML += `<i class="fa-regular fa-circle-xmark fa-2xl"></i>
+                              <p>Oops! Time's Up</p>
+                              <p>Correct Answer is ${wordList[random].word}!!</p>
+                              <button class="buttons" onclick="playAgain()">Play Again!!</button>`;
     }
 }
 

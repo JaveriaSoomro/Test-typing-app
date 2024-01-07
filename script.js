@@ -45,15 +45,7 @@ function checkInput(){
     let input = UserInput.value;
      let inputLowerCase = input.toLowerCase();
      let wordLowerCase = wordList[random].word.toLowerCase();
-    if(!input){
-        container2.innerHTML = "";
-        container2.innerHTML += `<i class="fa-solid fa-triangle-exclamation fa-2xl"></i>
-                                 <p>Please Enter Some Text!!</p>
-                                 <button class="buttons" onclick="playAgain()">Play Again!!</button>`;
-    }
-    else{
         inputLowerCase === wordLowerCase ? correct() : incorrect() ;
-    }
 }
 function correct(){
    container2.innerHTML = "";

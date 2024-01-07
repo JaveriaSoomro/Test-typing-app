@@ -66,7 +66,7 @@ function correct(){
 function incorrect(){
    container2.innerHTML = "";
    container2.innerHTML += `<i class="fa-regular fa-circle-xmark fa-2xl"></i>
-                         <p>Oops! Your Answer is Inorrect!!</p
+                         <p>Oops! Your Answer is Inorrect!!</p>
                          <p>Correct Answer is ${wordList[random].word}!!</p>
                          <button class="buttons" onclick="playAgain()">Play Again!!</button>`;
 }
